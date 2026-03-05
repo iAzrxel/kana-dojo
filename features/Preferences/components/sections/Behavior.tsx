@@ -170,11 +170,11 @@ const Behavior = () => {
   ] as const;
 
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-6'>
       {options.map(({ label, value, choices }) => (
-        <div key={label}>
+        <div key={label} className='flex flex-col gap-2'>
           <h4 className='text-lg'>{label}</h4>
-          <div className='flex flex-row gap-4 p-1 md:gap-8'>
+          <div className='flex flex-row gap-6 p-1 md:gap-12'>
             {choices.map((choice, i) => {
               const selected = value === choice.selectedWhen;
               return (
@@ -184,7 +184,7 @@ const Behavior = () => {
                   borderColorScheme={selected ? 'main' : 'secondary'}
                   borderBottomThickness={16}
                   borderRadius='3xl'
-                  className={`flex-1 items-end p-4 text-lg text-(--background-color) ${!selected ? 'opacity-70' : ''}`}
+                  className={`flex-1 items-end p-4 text-lg text-(--background-color) ${!selected ? 'opacity-40' : ''}`}
                   onClick={() => {
                     playClick();
                     choice.onClick();

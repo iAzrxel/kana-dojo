@@ -8,6 +8,7 @@ import { CLICK_SOUND_OPTIONS } from '../../data/audio/clickSounds';
 import CollapsibleSection from '../shared/CollapsibleSection';
 import { MousePointer2, Volume2, Zap } from 'lucide-react';
 import { useClick } from '@/shared/hooks/useAudio';
+import { ActionButton } from '@/shared/components/ui/ActionButton';
 
 function EffectCard({
   name,
@@ -122,27 +123,20 @@ const Effects = () => {
           {CLICK_SOUND_OPTIONS.map(option => {
             const isSelected = clickSoundId === option.id;
             return (
-              <button
+              <ActionButton
                 key={option.id}
-                type='button'
-                className={clsx(
-                  buttonBorderStyles,
-                  'rounded-3xl border-1 border-(--card-color) px-3 py-2 text-left text-sm capitalize',
-                )}
-                style={{
-                  backgroundColor: isSelected
-                    ? 'var(--secondary-color)'
-                    : undefined,
-                  color: isSelected ? 'var(--background-color)' : undefined,
-                  transition: 'background-color 275ms, color 275ms',
-                }}
+                colorScheme={isSelected ? 'main' : 'secondary'}
+                borderColorScheme={isSelected ? 'main' : 'secondary'}
+                borderBottomThickness={16}
+                borderRadius='3xl'
+                className={`px-3 py-2 text-sm text-(--background-color) capitalize ${!isSelected ? 'opacity-40' : ''}`}
                 onClick={() => {
                   setClickSoundId(option.id);
                   playClickById(option.id);
                 }}
               >
                 {option.label}
-              </button>
+              </ActionButton>
             );
           })}
         </fieldset>
