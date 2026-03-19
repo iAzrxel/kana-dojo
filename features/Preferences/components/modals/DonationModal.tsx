@@ -71,27 +71,31 @@ export default function DonationModal({
                 borderColorScheme='main'
                 borderRadius='2xl'
                 borderBottomThickness={14}
-                href='https://ko-fi.com/kanadojo'
-                target='_blank'
-                rel='noreferrer noopener'
-                onClick={playClick}
                 className='px-5 py-4 text-lg font-semibold sm:w-auto'
               >
-                <Heart className='size-5 fill-current animate-[jump_1s_ease-in-out_infinite]' />
-                Donate on Ko-fi
-                <svg
-                  aria-hidden='true'
-                  viewBox='0 0 24 24'
-                  className='size-5'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                <a
+                  href='https://ko-fi.com/kanadojo'
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  onClick={playClick}
+                  className='inline-flex items-center gap-2'
                 >
-                  <path d='M7 17L17 7' />
-                  <path d='M9 7h8v8' />
-                </svg>
+                  <Heart className='size-5 fill-current animate-[jump_1s_ease-in-out_infinite]' />
+                  Donate on Ko-fi
+                  <svg
+                    aria-hidden='true'
+                    viewBox='0 0 24 24'
+                    className='size-5'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='M7 17L17 7' />
+                    <path d='M9 7h8v8' />
+                  </svg>
+                </a>
               </ActionButton>
               <button
                 type='button'
