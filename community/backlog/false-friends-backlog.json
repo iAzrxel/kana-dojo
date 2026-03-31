@@ -357,7 +357,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 40,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -539,7 +539,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 60,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -575,7 +575,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 64,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -719,7 +719,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 80,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -755,7 +755,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 84,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -935,7 +935,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 104,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -1051,7 +1051,7 @@
     "explanation": "Often means impression/public image. (Set 6)",
     "example": "会社のイメージが良くなった。",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
