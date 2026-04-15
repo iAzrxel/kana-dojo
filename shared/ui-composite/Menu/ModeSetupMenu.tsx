@@ -46,6 +46,7 @@ const difficultyIcons: Record<GauntletDifficulty, React.ReactNode> = {
   hard: <Zap size={20} />,
   'instant-death': <Skull size={20} />,
 };
+const USE_NEW_GAME_MODE_ICON_STYLE = true;
 
 const ModeSetupMenu = ({
   isOpen,
@@ -471,7 +472,7 @@ function GameModeCards({
 
   return (
     <div className='space-y-3'>
-      {gameModes.map(gameModeOption => {
+      {gameModes.map((gameModeOption, index) => {
         const isSelected = gameModeOption.id === selectedGameMode;
         const Icon = gameModeOption.icon;
 
@@ -490,13 +491,23 @@ function GameModeCards({
           >
             <div
               className={clsx(
-                'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl',
-                isSelected
-                  ? 'bg-(--main-color) text-(--background-color)'
-                  : 'bg-(--border-color) text-(--muted-color)',
+                USE_NEW_GAME_MODE_ICON_STYLE
+                  ? 'motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 transition-colors [--float-distance:-2px]'
+                  : 'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl',
+                USE_NEW_GAME_MODE_ICON_STYLE &&
+                  (isSelected
+                    ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
+                    : 'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)'),
+                USE_NEW_GAME_MODE_ICON_STYLE &&
+                  index === 1 &&
+                  '[animation-delay:180ms]',
+                !USE_NEW_GAME_MODE_ICON_STYLE &&
+                  (isSelected
+                    ? 'bg-(--main-color) text-(--background-color)'
+                    : 'bg-(--border-color) text-(--muted-color)'),
               )}
             >
-              <Icon size={24} />
+              <Icon size={USE_NEW_GAME_MODE_ICON_STYLE ? 22 : 24} />
             </div>
             <div className='min-w-0 flex-1'>
               <h3 className='text-lg font-medium text-(--main-color)'>
